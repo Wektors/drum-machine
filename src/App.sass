@@ -4,18 +4,20 @@
   align-items: center
   height: 100vh
   width: 100vw
-  background: grey
+  background: #0c0621bb
 
 #drum-machine
   display: flex
   justify-content: center
-  background: white
+  background: #0c0621
   align-items: center
-  color: black
-  height: 40vh
-  width: 70vw
+  color: white
+  height: 50vh
+  width: auto
+  box-shadow: 0 0 20px #0c0621
+  border-radius: 1vw
 
-$gridsize: 7vw
+$gridsize: 8vh
 
 #display
   display: grid
@@ -26,18 +28,29 @@ $gridsize: 7vw
 
 .drum-pad
   display: grid
-  padding: 0.25*$gridsize
-  background: pink
-  border: 0.05*$gridsize solid blue
-  border-radius: 1vw
+  background: #7cb11a
+  border: 0.03*$gridsize solid #b0d42f
+  border-radius: 0.1*$gridsize
+  color: white
   justify-content: center
   align-items: center
   font-size: 1.5em
+  box-shadow: 0 0 10px #8abb22
+
+.drum-pad:hover
+  background: #7cb11af5
+  box-shadow: 0 0 18px #8abb22
+  cursor: pointer
 
 #control
   display: flex
-  padding: 7vw
+  padding: 5vw
 
 .control-item
   display: flex
   font-size: 2em
+  background: #2c273ebb
+  border-radius: 2vw
+  box-shadow: 0 0 7px #2a253c
+  padding: 1vw
+  width: 25vw

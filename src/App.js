@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.sass";
+import { useState } from "react";
 import Heater1 from "./samples/Heater-1.mp3";
 import Heater2 from "./samples/Heater-2.mp3";
 import Heater3 from "./samples/Heater-3.mp3";
@@ -15,40 +16,51 @@ function App() {
 }
 
 function DrumMachine() {
+	const [currSample, setSample] = useState("Sample Name");
+
 	let playHeater1 = () => {
 		new Audio(Heater1).play();
+		setSample("Heater 1");
 	};
 
 	let playHeater2 = () => {
 		new Audio(Heater2).play();
+		setSample("Heater 2");
 	};
 
 	let playHeater3 = () => {
 		new Audio(Heater3).play();
+		setSample("Heater 3");
 	};
 
 	let playHeater4 = () => {
 		new Audio(Heater4).play();
+		setSample("Heater 4");
 	};
 
 	let playHeater6 = () => {
 		new Audio(Heater6).play();
+		setSample("Clap");
 	};
 
 	let playDsc_Oh = () => {
 		new Audio(Dsc_Oh).play();
+		setSample("Open HH");
 	};
 
 	let playKick_n_Hat = () => {
 		new Audio(Kick_n_Hat).play();
+		setSample("Kick_n_Hat");
 	};
 
 	let playRP4_KICK_1 = () => {
 		new Audio(RP4_KICK_1).play();
+		setSample("Kick");
 	};
 
 	let playCev_H2 = () => {
 		new Audio(Cev_H2).play();
+		setSample("Closed HH");
 	};
 
 	let handleKey = (event) => {
@@ -114,7 +126,7 @@ function DrumMachine() {
 					</button>
 				</div>
 				<div id="control">
-					<div className="control-item">Name</div>
+					<div className="control-item">{currSample}</div>
 				</div>
 			</div>
 		</div>
