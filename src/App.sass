@@ -1,0 +1,43 @@
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  background: grey
+  height: 100vh
+  width: 100vw
+
+#drum-machine
+  display: flex
+  justify-content: center
+  align-items: center
+  background: white
+  color: black
+  height: 40vh
+  width: 70vw
+
+$gridsize: 7vw
+
+#display
+  display: grid
+  grid-template-columns: $gridsize $gridsize $gridsize
+  grid-template-rows: $gridsize $gridsize $gridsize
+  grid-gap: 0.25*$gridsize
+  padding: 5vw
+
+.drum-pad
+  display: grid
+  padding: 0.25*$gridsize
+  background: pink
+  border: 0.05*$gridsize solid blue
+  border-radius: 1vw
+  justify-content: center
+  align-items: center
+  font-size: 1.75em
+
+#control
+  display: flex
+  padding: 7vw
+
+.control-item
+  display: flex
+  font-size: 2em
