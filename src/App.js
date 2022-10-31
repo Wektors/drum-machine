@@ -51,39 +51,71 @@ function DrumMachine() {
 		new Audio(Cev_H2).play();
 	};
 
+	let handleKey = (event) => {
+		if (event.key === "q") {
+			playHeater1();
+		}
+		if (event.key === "w") {
+			playHeater2();
+		}
+		if (event.key === "e") {
+			playHeater3();
+		}
+		if (event.key === "a") {
+			playHeater4();
+		}
+		if (event.key === "s") {
+			playHeater6();
+		}
+		if (event.key === "d") {
+			playDsc_Oh();
+		}
+		if (event.key === "z") {
+			playKick_n_Hat();
+		}
+		if (event.key === "x") {
+			playRP4_KICK_1();
+		}
+		if (event.key === "c") {
+			playCev_H2();
+		}
+	};
+
 	return (
-		<div id="drum-machine">
-			<div id="display">
-				<button className="drum-pad" onClick={playHeater1}>
-					Q
-				</button>
-				<button className="drum-pad" onClick={playHeater2}>
-					W
-				</button>
-				<button className="drum-pad" onClick={playHeater3}>
-					E
-				</button>
-				<button className="drum-pad" onClick={playHeater4}>
-					A
-				</button>
-				<button className="drum-pad" onClick={playHeater6}>
-					S
-				</button>
-				<button className="drum-pad" onClick={playDsc_Oh}>
-					D
-				</button>
-				<button className="drum-pad" onClick={playKick_n_Hat}>
-					Z
-				</button>
-				<button className="drum-pad" onClick={playRP4_KICK_1}>
-					X
-				</button>
-				<button className="drum-pad" onClick={playCev_H2}>
-					C
-				</button>
-			</div>
-			<div id="control">
-				<div className="control-item">Name</div>
+		<div id="main" onKeyDown={handleKey} tabIndex={-1}>
+			<div id="drum-machine">
+				<div id="display">
+					<button className="drum-pad" onClick={playHeater1}>
+						Q
+					</button>
+					<button className="drum-pad" onClick={playHeater2}>
+						W
+					</button>
+					<button className="drum-pad" onClick={playHeater3}>
+						E
+					</button>
+					<button className="drum-pad" onClick={playHeater4}>
+						A
+					</button>
+					<button className="drum-pad" onClick={playHeater6}>
+						S
+					</button>
+					<button className="drum-pad" onClick={playDsc_Oh}>
+						D
+					</button>
+					<button className="drum-pad" onClick={playKick_n_Hat}>
+						Z
+					</button>
+					<button className="drum-pad" onClick={playRP4_KICK_1}>
+						X
+					</button>
+					<button className="drum-pad" onClick={playCev_H2}>
+						C
+					</button>
+				</div>
+				<div id="control">
+					<div className="control-item">Name</div>
+				</div>
 			</div>
 		</div>
 	);
