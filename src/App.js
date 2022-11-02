@@ -18,48 +18,80 @@ function App() {
 function DrumMachine() {
 	const [currSample, setSample] = useState("Sample Name");
 
+	const [volVal, setVol] = useState(0.3);
+
+	const incrVol = () => {
+		if (volVal < 0.9) {
+			setVol(volVal + 0.1);
+		}
+	};
+
+	const decrVol = () => {
+		if (volVal > 0.1) {
+			setVol(volVal - 0.1);
+		}
+	};
+
 	let playHeater1 = () => {
-		new Audio(Heater1).play();
+		const heater1 = new Audio(Heater1);
+		heater1.volume = volVal;
+		heater1.play();
 		setSample("Heater 1");
 	};
 
 	let playHeater2 = () => {
-		new Audio(Heater2).play();
+		const heater2 = new Audio(Heater2);
+		heater2.volume = volVal;
+		heater2.play();
 		setSample("Heater 2");
 	};
 
 	let playHeater3 = () => {
-		new Audio(Heater3).play();
+		const heater3 = new Audio(Heater3);
+		heater3.volume = volVal;
+		heater3.play();
 		setSample("Heater 3");
 	};
 
 	let playHeater4 = () => {
-		new Audio(Heater4).play();
+		const heater4 = new Audio(Heater4);
+		heater4.volume = volVal;
+		heater4.play();
 		setSample("Heater 4");
 	};
 
 	let playHeater6 = () => {
-		new Audio(Heater6).play();
+		const heater6 = new Audio(Heater6);
+		heater6.volume = volVal;
+		heater6.play();
 		setSample("Clap");
 	};
 
 	let playDsc_Oh = () => {
-		new Audio(Dsc_Oh).play();
+		const dsc_Oh = new Audio(Dsc_Oh);
+		dsc_Oh.volume = volVal;
+		dsc_Oh.play();
 		setSample("Open HH");
 	};
 
 	let playKick_n_Hat = () => {
-		new Audio(Kick_n_Hat).play();
+		const kick_n_Hat = new Audio(Kick_n_Hat);
+		kick_n_Hat.volume = volVal;
+		kick_n_Hat.play();
 		setSample("Kick_n_Hat");
 	};
 
 	let playRP4_KICK_1 = () => {
-		new Audio(RP4_KICK_1).play();
+		const rp4 = new Audio(RP4_KICK_1);
+		rp4.volume = volVal;
+		rp4.play();
 		setSample("Kick");
 	};
 
 	let playCev_H2 = () => {
-		new Audio(Cev_H2).play();
+		const cev = new Audio(Cev_H2);
+		cev.volume = volVal;
+		cev.play();
 		setSample("Closed HH");
 	};
 
@@ -93,40 +125,62 @@ function DrumMachine() {
 		}
 	};
 
+	// const music = document.getElementById("Q");
+	// const playQ = document.getElementById("Q-pad");
+
+	// playQ.addEventListener("click", music.play());
+
 	return (
 		<div id="main" onKeyDown={handleKey} tabIndex={-1}>
 			<div id="drum-machine">
-				<div id="display">
-					<button className="drum-pad" onClick={playHeater1}>
+				<div id="pads">
+					<button id="Q-pad" className="drum-pad" onClick={playHeater1}>
 						Q
 					</button>
-					<button className="drum-pad" onClick={playHeater2}>
+					<button id="W-pad" className="drum-pad" onClick={playHeater2}>
+					
 						W
 					</button>
-					<button className="drum-pad" onClick={playHeater3}>
+					<button id="E-pad" className="drum-pad" onClick={playHeater3}>
+					
 						E
 					</button>
-					<button className="drum-pad" onClick={playHeater4}>
+					<button id="A-pad" className="drum-pad" onClick={playHeater4}>
+					
 						A
 					</button>
-					<button className="drum-pad" onClick={playHeater6}>
+					<button id="S-pad" className="drum-pad" onClick={playHeater6}>
+					
 						S
 					</button>
-					<button className="drum-pad" onClick={playDsc_Oh}>
+					<button id="D-pad" className="drum-pad" onClick={playDsc_Oh}>
+					
 						D
 					</button>
-					<button className="drum-pad" onClick={playKick_n_Hat}>
+					<button id="Z-pad" className="drum-pad" onClick={playKick_n_Hat}>
+					
 						Z
 					</button>
-					<button className="drum-pad" onClick={playRP4_KICK_1}>
+					<button id="X-pad" className="drum-pad" onClick={playRP4_KICK_1}>
+					
 						X
 					</button>
-					<button className="drum-pad" onClick={playCev_H2}>
+					<button id="C-pad" className="drum-pad" onClick={playCev_H2}>
+					
 						C
 					</button>
 				</div>
-				<div id="control">
+				<div id="display">
 					<div className="control-item">{currSample}</div>
+					<div className="control-item">
+						Volume: {Math.round(volVal * 10)}
+						<button className="volume-button" onClick={incrVol}>
+							+
+						</button>
+						<button className="volume-button" onClick={decrVol}>
+							-
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -19,12 +19,12 @@
 
 $gridsize: 8vh
 
-#display
+#pads
   display: grid
   grid-template-columns: $gridsize $gridsize $gridsize
   grid-template-rows: $gridsize $gridsize $gridsize
   grid-gap: 0.25*$gridsize
-  padding: 5vw
+  padding: 4vw
 
 .drum-pad
   display: grid
@@ -42,15 +42,62 @@ $gridsize: 8vh
   box-shadow: 0 0 18px #8abb22
   cursor: pointer
 
-#control
+#display
   display: flex
-  padding: 5vw
+  flex-direction: column
+  padding: 4vw
 
 .control-item
   display: flex
-  font-size: 2em
+  justify-content: space-evenly
+  align-items: center
+  font-size: 1.5em
   background: #2c273ebb
   border-radius: 2vw
   box-shadow: 0 0 7px #2a253c
   padding: 1vw
-  width: 25vw
+  width: 20vw
+  height: 6vh
+  margin: 2vh
+
+.volume-button
+  font-size: 1.25em
+  background: #0c0621
+  height: 6vh
+  width: 6vh
+  color: white
+  border: 0.5vh solid grey
+  border-radius: 1vh
+  cursor: pointer
+
+.volume-button:hover
+  background: #0c0621af
+  box-shadow: 0 0 18px #0c062140
+  cursor: pointer
+
+@media (max-width: 768px)
+
+  #drum-machine
+    height: 30vh
+    width: auto
+
+  $mobilegridsize: 0.8*$gridsize
+
+  #pads
+    display: grid
+    grid-template-columns: $mobilegridsize $mobilegridsize $mobilegridsize
+    grid-template-rows: $mobilegridsize $mobilegridsize $mobilegridsize
+    grid-gap: 0.125*$mobilegridsize
+    padding: 4vw
+
+  .control-item
+    font-size: 1.25em
+    padding: 1vw
+    width: 30vw
+    height: 6vh
+    margin: 1vh
+
+  .volume-button
+    font-size: 1em
+    height: 4vh
+    width: 4vh
