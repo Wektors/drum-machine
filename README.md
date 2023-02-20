@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+## running on netlify: https://resplendent-alpaca-8ab8a0.netlify.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/104524608/220199414-aff23c06-e7d2-4790-b16e-3b1af50a1e15.png)
+
 
 ## Available Scripts
 
